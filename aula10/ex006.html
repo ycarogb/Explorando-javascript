@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            background: rgb(42, 139, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div id = "area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> <!-- indicando qual função será acionada ao clicar da div -->
+        Interaja...
+    </div>
+    <script>
+        var area = window.document.getElementById('area'); // getElementById cria uma relação entre a função e a div
+        
+        //é possível usar addEventListener para relacionar a div a um evento sem necessitar da criação de funções e os parâmetros da div
+        area.addEventListener('click', clicar);
+        area.addEventListener('mouseenter', entrar);
+        area.addEventListener('mouseout', sair);
+        
+        function clicar() {
+            area.innerText = 'Clicou!'; 
+            area.style.background = 'red'; 
+        }
+        function entrar(){
+            area.innerText = 'Entrou!'
+        }
+        function sair(){
+            area.innerText = 'Saiu!'
+            area.style.background = 'green'; 
+        }
+    </script>
+</body>
+</html>

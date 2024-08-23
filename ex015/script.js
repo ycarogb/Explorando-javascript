@@ -18,12 +18,10 @@ function verificar() {
 function verificarInput(input) {
     if(input.value.length == 0) {
         window.alert('[ERRO] Ano de nascimento não informado.');
-        //return true;
+        window.location.reload(true);
     } else if (Number(input.value) > ano) {
         window.alert('[ERRO] Ano de nascimento não pode ser maior que o ano atual.')
-        //return true;
-    } else {
-        //return false;
+        window.location.reload(true);
     }
 }
 
